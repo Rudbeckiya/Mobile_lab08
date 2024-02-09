@@ -3,4 +3,5 @@
     <string name="lab_new">New</string>
     <string name="lab_save">Save</string>
     <string name="lab_delete">Delete</string>
+    <string name="txt_content">T</string>
 </resources>
