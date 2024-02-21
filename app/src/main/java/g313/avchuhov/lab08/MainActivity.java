@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity
 {
     ListView lstctl;
     ArrayList<mynote> lst = new ArrayList <> ();
-    ArrayList<mynote> adp;
+    ArrayAdapter<mynote> adp;
 
     Context ctx;
 
@@ -46,11 +46,15 @@ public class MainActivity extends AppCompatActivity
         adp = new ArrayAdapter <mynote> (this, android.R.layout.simple_list_item_1, lst);
         lstctl.setAdapter(adp);
 
-        lstctl,setOnItemClickListener((parent, view, position, id) {
-            mynote n = adp.getItem(position);
-            Intent i = new Intent(ctx, Main2Activity.class);
-            DOPISHI
-        })
+        lstctl.setOnItemClickListener((parent, view, position, id) {
 
+        mynote n = adp.getItem(position);
+        Intent i = new Intent(ctx, Main2Activity.class);
+        i.putExtra("note-id", n.id);
+        i.putExtra("note-txt", n.txt);
+        startActivityForResult(i, 1);
+    });
+
+        update_list();
     }
 }
