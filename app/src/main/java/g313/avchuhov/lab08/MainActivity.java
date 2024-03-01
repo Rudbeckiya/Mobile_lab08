@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         adp = new ArrayAdapter <mynote> (this, android.R.layout.simple_list_item_1, lst);
         lstctl.setAdapter(adp);
 
-        lstctl.setOnItemClickListener((parent, view, position, id) {
+        lstctl.setOnItemClickListener((parent, view, position, id) -> {
 
         mynote n = adp.getItem(position);
         Intent i = new Intent(ctx, Main2Activity.class);
